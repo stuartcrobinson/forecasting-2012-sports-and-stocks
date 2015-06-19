@@ -1,0 +1,39 @@
+
+
+1.  get all new bets.  what if there's a new user???? --- have to update the leaderboard every day
+
+2 am
+harvestLeaderboard(league)	-- to see if there are new users.  ALSO to see which users made new bets yesterday
+updateUserBets(league)		-- only update those users whose leaderboard data changed.
+determineMagicBets(league)	-- try a few different parameters, use the one w/ highest units. 
+logMagicBets(league)		-- log to file and to wagerline (needs selenium webdriver)
+
+
+#######updateUserBets(league)#########
+read both oldLeaderboard and newLeaderboard to array.  
+for each new user
+- get all user bets
+make a list of all users whose total num games is different in the newLeaderboard
+for each changed user
+- get yesterdays bets & append to the user's bets file
+
+
+#########determineMagicBets(league)########
+basically just use Tabulate.java.  pull magicBet from the ranked lists of bets just like "analyze.java" does
+
+
+#########logMagicBets(league)############
+
+append game data and pending bet to file
+
+log in to wagerline, then save bets here
+http://contests.covers.com/sportscontests/makepicks.aspx?sportid=
+
+i think it's possible like this: http://stackoverflow.com/questions/13220854/obtaining-all-name-value-pairs-in-a-form-using-jsoup
+to submit the url w/ the radio buttons described in the code
+checkboxes: http://stackoverflow.com/questions/12133455/how-do-you-send-checkbox-data-in-jsoup
+(irrelevant: selenium/jsoup combo: http://stackoverflow.com/questions/10156019/using-jsoup-to-sign-in-and-crawl-data)
+
+http://stackoverflow.com/questions/17361599/sent-radio-button-value-on-request-using-jsoup
+
+use this to test jsoup and radio buttons! http://www.quackit.com/html/codes/html_radio_button.cfm
